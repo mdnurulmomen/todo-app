@@ -5,6 +5,7 @@
  */
 
 import './bootstrap';
+
 import { createApp } from 'vue';
 
 /**
@@ -15,8 +16,35 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
-import ExampleComponent from './components/ExampleComponent.vue';
-app.component('example-component', ExampleComponent);
+/* Importing Global MenuBar */
+import MenuBar from './pages/MenuBar.vue';
+app.component('menu-bar', MenuBar);
+
+/* Importing Global Components dynamically */
+const globalComponents = import.meta.glob('./components/globals/*.vue', { eager: true });
+
+const camelToKebab = str => str.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
+
+Object.entries(globalComponents).forEach(([key, value]) => {
+    // "./components/FruitComponent.vue" will become "fruit-component"
+    const componentNameInKebabForm = camelToKebab(key.split('/').pop().replace(/\.\w+$/, ''))
+    /* Registering Global Components dynamically */
+    app.component(componentNameInKebabForm, value.default)
+})
+
+import router from './routes';      // exported default
+app.use(router);
+
+/* Global Helper-Functions */
+import { capitalizeEachWord } from './helpers';        // exported modules
+app.config.globalProperties.$helpers = {
+    capitalizeEachWord
+}
+
+/* Store */
+import { createPinia } from 'pinia'
+const pinia = createPinia()
+app.use(pinia)
 
 /**
  * The following block of code may be used to automatically register your
