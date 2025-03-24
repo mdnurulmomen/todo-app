@@ -16,6 +16,7 @@
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <small id="emailHelp" class="form-text text-muted">e.g. user-1@example.com</small>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -30,6 +31,7 @@
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <small id="emailHelp" class="form-text text-muted">e.g. password</small>
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
