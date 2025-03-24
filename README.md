@@ -76,26 +76,19 @@ Before you begin, ensure you have the following installed:
     php artisan db:seed
     ```
 
-7.  **Install Laravel Breeze (with Vue scaffolding):**
-
-    ```bash
-    composer require laravel/ui
-    php artisan ui vue --auth
-    ```
-
-8.  **Install Node.js Dependencies:**
+7.  **Install Node.js Dependencies:**
 
     ```bash
     npm install
     ```
 
-9.  **Compile Assets:**
+8.  **Compile Assets:**
 
     ```bash
     npm run dev
     ```
 
-10. **Start the Development Server:**
+9. **Start the Development Server:**
 
     ```bash
     php artisan serve
