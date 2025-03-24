@@ -14,7 +14,6 @@ use App\Http\Controllers\TaskController;
 |
 */
 Route::prefix('v1')->group(function () {
-
     Route::middleware('auth:sanctum')->group(function () {
         Route::apiResource('tasks', TaskController::class);
     });

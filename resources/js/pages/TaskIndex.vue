@@ -11,7 +11,7 @@
 
                     <div class="card-body">
                         <index-table-component
-                            :column-names="['name']"
+                            :column-names="['title']"
                             :has-actions="true"
                             :action-button-names="['edit', 'delete']"
                             :action-button-class-names="['btn-outline-primary', 'btn-outline-danger']"
@@ -62,12 +62,17 @@
         // console.log('Task List mounted.')
         generalStore.currentEntityShowableFieldObjects = [
             {
-                name:'name',
+                name:'title',
+                type:'text'
+            },
+
+            {
+                name:'description',
                 type:'text'
             },
         ];
 
-        generalStore.currentEntityRequiredFields = ['name'];
+        generalStore.currentEntityRequiredFields = ['title', 'description'];
         generalStore.createOrEditModal = new Modal('#dynamic-form-modal', {});
         generalStore.deleteConfirmationModal = new Modal('#delete-confirmation-modal', {});
     })
