@@ -132,7 +132,10 @@ The following API routes are protected by Laravel Sanctum:
 
 ## Testing
 
--   Add automated tests for both the Laravel backend and the Vue 3 frontend. (This is a recommended addition, but not included in the above code)
+-   Run the automated test cases.
+    ```bash
+    php artisan test
+    ```
 
 ## Contributing
 
