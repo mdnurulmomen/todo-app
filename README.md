@@ -74,6 +74,12 @@ Before you begin, ensure you have the following installed:
     php artisan migrate
     ```
 
+6.  **Run Database Seeder:**
+
+    ```bash
+    php artisan db:seed
+    ```
+
 7.  **Install Laravel Breeze (with Vue scaffolding):**
 
     ```bash
