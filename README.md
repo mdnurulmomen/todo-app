@@ -1,7 +1,3 @@
-<p align="center">
-    <a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="To Do Application"></a>
-</p>
-
 This project is a basic To-Do List application built with Laravel 12, Vue 3, and Laravel Sanctum for API authentication. Users can add, edit, delete, and mark tasks as completed.
 
 ## Features
@@ -20,7 +16,7 @@ This project is a basic To-Do List application built with Laravel 12, Vue 3, and
 
 Before you begin, ensure you have the following installed:
 
--   **PHP (>= 8.1):** [https://www.php.net/downloads.php](https://www.php.net/downloads.php)
+-   **PHP (>= 8.2):** [https://www.php.net/downloads.php](https://www.php.net/downloads.php)
 -   **Composer:** [https://getcomposer.org/download/](https://getcomposer.org/download/)
 -   **Node.js and npm:** [https://nodejs.org/](https://nodejs.org/)
 -   **MySQL:** [https://www.mysql.com/downloads/](https://www.mysql.com/downloads/)
