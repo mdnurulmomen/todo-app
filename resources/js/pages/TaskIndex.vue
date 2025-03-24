@@ -68,11 +68,16 @@
 
             {
                 name:'description',
-                type:'text'
+                type:'long-text'
+            },
+
+            {
+                name:'status',
+                type:'boolean'
             },
         ];
 
-        generalStore.currentEntityRequiredFields = ['title', 'description'];
+        generalStore.currentEntityRequiredFields = ['title', 'description', 'status'];
         generalStore.createOrEditModal = new Modal('#dynamic-form-modal', {});
         generalStore.deleteConfirmationModal = new Modal('#delete-confirmation-modal', {});
     })

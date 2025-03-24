@@ -16,10 +16,48 @@
                         <div
                             class="mb-3"
                             v-for="showableFieldObject in generalStore.currentEntityShowableFieldObjects"
+                            :key="'field-key-name-'+ showableFieldObject['name']"
                         >
+                            <!-- Status Checkbox -->
+                            <div v-if="showableFieldObject['name']=='status' && showableFieldObject['type']=='boolean'">
+                                <label class="form-label">
+                                    {{ $helpers.capitalizeEachWord(generalStore.currentEntityName) }} {{ $helpers.capitalizeEachWord(showableFieldObject['name']) }}
+                                </label>
+
+                                <div class="form-check">
+                                    <input
+                                        type="checkbox"
+                                        value="1"
+                                        class="form-check-input position-static"
+                                        v-model="generalStore.currentEntity[showableFieldObject['name']]"
+                                    />
+
+                                    <label class="form-check-label" for="gridCheck1">
+                                        Completed
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Description Field -->
+                            <div v-else-if="showableFieldObject['name']=='description' && showableFieldObject['type']=='long-text'">
+                                <label class="form-label">
+                                    {{ $helpers.capitalizeEachWord(generalStore.currentEntityName) }} {{ $helpers.capitalizeEachWord(showableFieldObject['name']) }}
+                                </label>
+
+                                <textarea
+                                    v-model="generalStore.currentEntity[showableFieldObject['name']]"
+                                    class="form-control"
+                                    rows="3"
+                                    placeholder="Task Description"
+                                >
+                                </textarea>
+                            </div>
+
+                            <!-- Other Fields -->
                             <custom-objective-input-field-component
                                 :field="showableFieldObject"
                                 @input="validateFormInput(showableFieldObject['name'])"
+                                v-else
                             />
                         </div>
                     </div>
