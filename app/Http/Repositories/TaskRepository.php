@@ -3,13 +3,14 @@
 namespace App\Http\Repositories;
 
 use App\Models\Task;
+use App\Http\Resources\v1\TaskCollection;
 use App\Http\Interfaces\TaskRepositoryInterface;
 
 class TaskRepository implements TaskRepositoryInterface
 {
     public function allTasks()
     {
-        return Task::latest()->paginate(10);
+        return new TaskCollection(Task::latest()->paginate(10));
     }
 
     public function storeTask($data)
