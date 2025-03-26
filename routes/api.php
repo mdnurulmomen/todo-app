@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,8 @@ use App\Http\Controllers\TaskController;
 |
 */
 Route::prefix('v1')->group(function () {
+    Route::post('/login', [LoginController::class, 'login']);
+
     Route::middleware('auth:sanctum')->group(function () {
         Route::apiResource('tasks', TaskController::class);
     });
