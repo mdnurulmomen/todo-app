@@ -76,25 +76,13 @@ Before you begin, ensure you have the following installed:
     php artisan db:seed
     ```
 
-7.  **Install Node.js Dependencies:**
-
-    ```bash
-    npm install
-    ```
-
-8.  **Compile Assets:**
-
-    ```bash
-    npm run dev
-    ```
-
-9. **Start the Development Server:**
+7. **Start the Development Server:**
 
     ```bash
     php artisan serve
     ```
 
-    Open your browser and navigate to `http://127.0.0.1:8000`.
+    Open your browser and navigate to https://github.com/mdnurulmomen/todo-front-application for front-end.
 
 ## API Routes
 
@@ -105,15 +93,6 @@ The following API routes are protected by Laravel Sanctum:
 -   `GET /api/v1/tasks/{task}`: Retrieve a specific task.
 -   `PUT /api/v1/tasks/{task}`: Update a specific task.
 -   `DELETE /api/v1/tasks/{task}`: Delete a specific task.
-
-## Vue 3 Components
-
--   `TaskIndex.vue`: Main component for displaying and managing tasks.
--   `resources/js/components/globals`: Common components for managing vue-pages.
--   `resources/js/components/helpers`: All functions for general purposes.
--   `resources/js/components/pages`: All pages in application.
--   `resources/js/components/routes`: All routes in application.
--   `resources/js/stores/task.js`: Pinia store for managing task state.
 
 ## Authentication
 
@@ -136,4 +115,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This application is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
